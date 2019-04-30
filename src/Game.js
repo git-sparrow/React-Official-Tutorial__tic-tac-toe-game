@@ -10,6 +10,7 @@ class Game extends Component {
       stepNumber: 0,
       xIsNext: true,
       locationHistory: [{ rowNumber: '', columnNumber: '' }],
+      sorted: false,
     }
   }
 
@@ -62,6 +63,11 @@ class Game extends Component {
         return 'column #3'
       }
     }
+
+     const current2 = document.getElementsByClassName('active')
+     if (current2.length > 0) {
+         current2[0].className = current2[0].className.replace(' active', '')
+     }
 
     this.setState({
       history: [...history, { squares: squares }],
@@ -122,7 +128,7 @@ class Game extends Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <ol>{!this.state.sorted ? moves : moves.reverse()}</ol>
         </div>
       </div>
     )
