@@ -74,7 +74,13 @@ class Game extends Component {
     })
   }
 
-  jumpTo(step) {
+  jumpTo = (step, e) => {
+    const current = document.getElementsByClassName('active')
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(' active', '')
+    }
+    e.target.className += ' active'
+
     this.setState({
       stepNumber: step,
       xIsNext: step % 2 === 0,
@@ -95,7 +101,9 @@ class Game extends Component {
 
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="btn" onClick={e => this.jumpTo(move, e)}>
+            {desc}
+          </button>
         </li>
       )
     })
