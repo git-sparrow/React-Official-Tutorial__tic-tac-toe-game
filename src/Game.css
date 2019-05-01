@@ -53,3 +53,11 @@ ol, ul {
 .btn:hover {
   background-color: #62b255;
 }
+
+.toggle-button {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #f7be29;
+}
