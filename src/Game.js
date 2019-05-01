@@ -67,10 +67,10 @@ class Game extends Component {
       }
     }
 
-     const current2 = document.getElementsByClassName('active')
-     if (current2.length > 0) {
-         current2[0].className = current2[0].className.replace(' active', '')
-     }
+    const current2 = document.getElementsByClassName('active')
+    if (current2.length > 0) {
+      current2[0].className = current2[0].className.replace(' active', '')
+    }
 
     this.setState({
       history: [...history, { squares: squares }],
@@ -97,7 +97,7 @@ class Game extends Component {
   }
 
   sortMoveList = () => {
-    this.setState({sorted: !this.state.sorted})
+    this.setState({ sorted: !this.state.sorted })
   }
 
   render() {
@@ -124,8 +124,8 @@ class Game extends Component {
     let status
     if (winner) {
       status = 'Winner: ' + winner
-    } else if ( (current.squares.findIndex((item) => item === null) === -1) ) {
-      status = 'It\'s a draw. Try again to designate the winner'
+    } else if (current.squares.findIndex(item => item === null) === -1) {
+      status = "It's a draw. Try again to designate the winner"
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
     }
@@ -137,9 +137,9 @@ class Game extends Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-            <button className="toggle-button" onClick={this.sortMoveList}>
-                {!this.state.sorted ? 'sort by ascending' : 'sort by descending' }
-            </button>
+          <button className="toggle-button" onClick={this.sortMoveList}>
+            {!this.state.sorted ? 'sort by ascending' : 'sort by descending'}
+          </button>
           <ol>{!this.state.sorted ? moves : moves.reverse()}</ol>
         </div>
       </div>
