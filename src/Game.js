@@ -28,6 +28,9 @@ class Game extends Component {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i]
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        document.getElementById(a).classList.add('winner')
+        document.getElementById(b).classList.add('winner')
+        document.getElementById(c).classList.add('winner')
         return squares[a]
       }
     }

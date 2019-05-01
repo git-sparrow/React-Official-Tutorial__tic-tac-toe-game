@@ -61,3 +61,7 @@ ol, ul {
   font-weight: bold;
   background-color: #f7be29;
 }
+
+.winner {
+  background-color: #4fda31;
+}
