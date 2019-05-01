@@ -124,6 +124,8 @@ class Game extends Component {
     let status
     if (winner) {
       status = 'Winner: ' + winner
+    } else if ( (current.squares.findIndex((item) => item === null) === -1) ) {
+      status = 'It\'s a draw. Try again to designate the winner'
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
     }
