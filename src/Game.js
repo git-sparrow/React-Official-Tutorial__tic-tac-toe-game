@@ -131,10 +131,10 @@ class Game extends Component {
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
         </div>
         <div className="game-info">
-          <button className="toggle-button" onClick={this.sortMoveList}>
-              {!this.state.sorted ? 'sort by ascending' : 'sort by descending' }
-          </button>
           <div>{status}</div>
+            <button className="toggle-button" onClick={this.sortMoveList}>
+                {!this.state.sorted ? 'sort by ascending' : 'sort by descending' }
+            </button>
           <ol>{!this.state.sorted ? moves : moves.reverse()}</ol>
         </div>
       </div>
