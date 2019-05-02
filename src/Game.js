@@ -90,6 +90,11 @@ class Game extends Component {
     }
     e.target.className += ' active'
 
+      Array.from(document.getElementsByClassName("winner")).forEach(function(item) {
+          console.log(item)
+          item.classList.remove('winner')
+      });
+
     this.setState({
       stepNumber: step,
       xIsNext: step % 2 === 0,
